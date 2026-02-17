@@ -1,6 +1,6 @@
 Response to question 9.
 The directory that contains the data analysis and a small visualization for step 9 is below:
-major_assignment_ccds/notebooks/0.01-rc-small_data_analysis_and_visualization
+ccds_2/notebooks/0.01-rc-small_data_analysis_and_visualization
 
 Reflection
 This project was a great learning experience regarding how to maintain great code quality and project structure for correctness and reproducibility. Additionally, it provided me with valuable experience in interacting with a cloud service provider via Linux CLI that will prove useful in the upcoming weeks for storing and retrieving data for my Capstone project.  Although this major assignment did come with major challenges that I had to overcome, it reinforced my understanding of how the various systems in this project work. 
