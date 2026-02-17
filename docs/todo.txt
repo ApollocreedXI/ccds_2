@@ -1,0 +1,17 @@
+
+11. Use any code or text editor to create a file called reflection.txt, save it under the docs directory. 
+Before making your final commit, create a small text file called todo.txt in the root of your project repository or in the docs folder. In this file, list 2-4 next steps you would take if this project were real and continuing, as short bullet points.
+
+•	I would break down all current and future notebooks into source code to facilitate easier code review.  In practice, if I were on a collaborative team and was pushing my changes to the main branch, it would be much easier to review source code with comments than it is a notebook file with markdown and outputs. This is because on GitHub, by default, notebook differences show using the underlying JSON file format, making it difficult to observe and comment on code changes with notebooks. To facilitate more efficient code reviews, I would likely take advantage of the “nbautoexport” that the creators of the Cookie Cutter Data Science template created. This tool automatically creates a source file (i.e., .py) version of the notebook each time it is saved, making it more efficient to maintain source files for code reviews. 
+
+•	I did notice that the Boston population dataset may have population statistics on the Boston neighborhoods across time. If I were to continue to work on this project, I would look into how the population demographics have changed over time, including educational attainment, household income, and other attributes. With this additional information, I could perform a longitudinal study to predict future population trends that might be useful for city planning and budgeting. I could then take advantage of the CCDS template to store both the model used for training and the model used for inference in the modeling directory of the project.
+
+•	If I were to continue this analysis on understanding temporal population changes in Boston, it would be informative to augment the analysis with economic datasets that contain information regarding inflation, tariffs, federal funds rates, and others to capture the economic environment individuals are experiencing that influences migration patterns. Diving into the technicals, this could be achieved by placing the additional dataset into the S3 Amazon bucket and running the make command “make sync_data_down” which would pull the data into the “raw” data directory. To perform any data cleaning, I could modify the def main function of the “data.py” file to include additional parameters that point to the new data sources. For instance, below is code to allow data cleaning for an additional dataset named “dataset_econ”. 
+
+# ---- REPLACE DEFAULT PATHS AS APPROPRIATE ----
+    input_path_1: Path = RAW_DATA_DIR / "dataset.csv",
+    output_path_1: Path = PROCESSED_DATA_DIR / "dataset.csv",
+    input_path_2: Path = RAW_DATA_DIR / " dataset_econ.csv", # Additional dataset input
+    output_path_2: Path = PROCESSED_DATA_DIR / " dataset_econ.csv", # Export the new dataset to the processed directory
+
+These parameters can then be used to create directory objects (e.g, loc = input_path_2) for data cleaning. 
